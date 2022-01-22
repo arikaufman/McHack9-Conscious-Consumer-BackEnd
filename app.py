@@ -1,5 +1,5 @@
 import os
-
+ from .Controllers import companyController
 from flask import Flask
 
 
@@ -24,9 +24,10 @@ def create_app(test_config=None):
     except OSError:
         pass
 
-    # a simple page that says hello
+    app.register_blueprint(companyController.bp)
+    
+    # unrouted page
     @app.route('/')
     def hello():
         return 'The McHacks 22 Back End'
-
     return app
