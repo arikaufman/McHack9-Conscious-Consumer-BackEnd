@@ -1,6 +1,6 @@
 import requests
 from html.parser import HTMLParser
-from HTMLParser import HTMLParser
+#from HTMLParser import HTMLParser
 from bs4 import BeautifulSoup
 
 URL = "https://www.sustainalytics.com/esg-ratings/amazon-com-inc/1007896995"
