@@ -1,6 +1,6 @@
 import os
- from .Controllers import companyController
-from flask import Flask
+from Controllers import companyController
+from flask import Flask, jsonify
 
 
 def create_app(test_config=None):
@@ -25,7 +25,7 @@ def create_app(test_config=None):
         pass
 
     app.register_blueprint(companyController.bp)
-    
+
     # unrouted page
     @app.route('/')
     def hello():
