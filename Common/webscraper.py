@@ -9,8 +9,12 @@ URL_company = "https://www.sustainalytics.com/esg-rating/cisco-systems-inc/10078
 html_company = requests.get(URL_company)
 
 print(html_company.text)
+soup = BeautifulSoup(html_home, "html.parser")
+soup.replace_with()
+
 
 soup = BeautifulSoup(html_company.content, "html.parser")
 rating = soup.find('div', {"class" : "col-6 risk-rating-score"})
 print(rating.text)
+
 
