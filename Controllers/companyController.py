@@ -2,7 +2,7 @@ from flask import Blueprint, jsonify
 from Domain.company import Company
 from flask_cors import CORS
 from Domain.state import State
-#import Domain.stateDomain as domain
+from Domain.stateDomain import stateDomain
 
 bp = Blueprint('companyController', __name__, url_prefix='/companyController')
 
@@ -14,6 +14,6 @@ def hello_world():
 @bp.route('/get/<name>/<item>/<longitude>/<latitude>')
 def get(name, item, longitude, latitude):
    state = State(name, item, longitude, latitude)
-   return jsonify(state.__dict__)
+   return jsonify(stateDomain.get(state))
 
 
