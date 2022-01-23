@@ -4,16 +4,14 @@ class Company:
         id=0,
         sector="",
         name="",
-        location="",
-        address="",
-        websiteurl="",
-        esgrating=0):
+        latitude="",
+        longitude="",
+        esgrating=""):
 
         self.id = id
         self.sector = sector
         self.name = name
-        self.location = location
-        self.address = address
-        self.websiteurl = websiteurl
+        self.latitude = latitude
+        self.longitude = longitude
         self.esgrating = esgrating
 

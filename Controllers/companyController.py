@@ -6,13 +6,13 @@ from flask_cors import CORS
 
 bp = Blueprint('companyController', __name__, url_prefix='/companyController')
 
-@bp.route('/getlist/<sector>')
-def getList(sector):
-   companies = companyDomain.getList(sector)
+@bp.route('/getlist/<item>')
+def getList(item):
+   companies = companyDomain.getList(item)
    companies2DArray = []
    for company in companies:
       print(company.id)
-      companies2DArray.append([company.id, company.sector, company.name, company.location, company.address, company.websiteurl, company.esgrating])
+      companies2DArray.append([company.id, company.sector, company.name, company.latitude, company.longitude, company.esgrating])
    return json.dumps(companies2DArray)
 
 

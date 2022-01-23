@@ -6,8 +6,7 @@ import json
 
 bp = Blueprint('stateController', __name__, url_prefix='/stateController')
 
-@bp.route('/get/<name>/<item>/<longitude>/<latitude>')
-def get(name, item, longitude, latitude):
-   state = State(name, item, longitude, latitude)
+@bp.route('/get/<name>/<longitude>/<latitude>')
+def get(name, longitude, latitude):
+   state = State(name, str(longitude), str(latitude), str(0))
    return jsonify(stateDomain.get(state).__dict__)
-
