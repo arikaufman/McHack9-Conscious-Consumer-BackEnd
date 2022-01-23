@@ -1,5 +1,6 @@
 import os
 from Controllers import companyController
+from Controllers import stateController
 from flask import Flask, jsonify
 from flask_cors import CORS
 
@@ -23,6 +24,7 @@ def create_app(test_config=None):
         pass
 
     app.register_blueprint(companyController.bp)
+    app.register_blueprint(stateController.bp)
 
     # unrouted page
     @app.route('/')

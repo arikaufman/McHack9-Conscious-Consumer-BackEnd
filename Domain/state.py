@@ -4,10 +4,14 @@ class State:
         name="",
         item="",
         longitude="",
-        latitude=""):
+        latitude="",
+        esgRating=""):
 
         self.name = name
         self.item = item
         self.longitude = longitude
         self.latitude = latitude
+        self.esgRating = ""
+
+
 

@@ -5,6 +5,7 @@ class Company:
         sector="",
         name="",
         location="",
+        address="",
         websiteurl="",
         esgrating=0):
 
@@ -12,6 +13,7 @@ class Company:
         self.sector = sector
         self.name = name
         self.location = location
+        self.address = address
         self.websiteurl = websiteurl
         self.esgrating = esgrating
 

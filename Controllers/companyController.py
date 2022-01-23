@@ -1,19 +1,18 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify,Response
 from Domain.company import Company
+from Domain.companyDomain import companyDomain
+import json
 from flask_cors import CORS
-from Domain.state import State
-from Domain.stateDomain import stateDomain
 
 bp = Blueprint('companyController', __name__, url_prefix='/companyController')
 
-@bp.route('/get')
-def hello_world():
-   company = Company(1, "electronics", "apple", "latitude longitude", "https://www.apple.com/ca/", 27)
-   return jsonify(company.__dict__)
-
-@bp.route('/get/<name>/<item>/<longitude>/<latitude>')
-def get(name, item, longitude, latitude):
-   state = State(name, item, longitude, latitude)
-   return jsonify(stateDomain.get(state))
+@bp.route('/getlist/<sector>')
+def getList(sector):
+   companies = companyDomain.getList(sector)
+   companies2DArray = []
+   for company in companies:
+      print(company.id)
+      companies2DArray.append([company.id, company.sector, company.name, company.location, company.address, company.websiteurl, company.esgrating])
+   return json.dumps(companies2DArray)
 
 
