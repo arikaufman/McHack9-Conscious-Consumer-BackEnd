@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import psycopg2
 import os
+
 class sqlconnector:
     def connect(sql):
         """ Connect to the PostgreSQL database server """
